@@ -6,8 +6,41 @@ button {
   border: none;
   border-radius: 2px;
 }
+.button {
+  background-color: rgb(105, 105, 105);
+  color: white;
+}
+.buttons{
+  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  position: relative;
+  top:50%;
+  width: auto;
+}
+
+.buttonOperator{
+  background-color: orange;
+  color: white;
+}
 
 button.current {
   box-shadow: 0 0 0 2px white,
               0 0 0 4px black;
+}
+
+body{
+  width: 215px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header{
+  display: flex;
+  top:0;
+  justify-content: center;
+  border: 3px solid black;
+  border-radius: 10px;
 }
