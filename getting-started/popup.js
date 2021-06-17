@@ -7,26 +7,29 @@ var output = document.getElementById("output");
 let firstValue = "";
 let secondValue = "";
 let currentOperator = null;
+let temp = null;
 
 clear[0].addEventListener("click", function () {
   firstValue = "";
   secondValue = "";
   currentOperator = null;
+  temp = null;
   output.innerHTML = 0;
 });
 
 equals[0].addEventListener("click", function () {
   if (currentOperator === "+") {
-    output.innerHTML = Number(firstValue) + Number(secondValue);
+    output.innerHTML = String(Number(firstValue) + Number(secondValue)).slice(0,13);
   } else if (currentOperator === "-") {
-    output.innerHTML = Number(firstValue) - Number(secondValue);
+    output.innerHTML = String(Number(firstValue) - Number(secondValue)).slice(0,13);
   }
     else if (currentOperator === "/"){
       output.innerHTML = String(Number(firstValue) / Number(secondValue)).slice(0, 13);
     }
     else if (currentOperator === "*"){
-      output.innerHTML = Number(firstValue) * Number(secondValue);
+      output.innerHTML = String(Number(firstValue) * Number(secondValue)).slice(0,13);
     }
+  temp = Number(output.innerHTML)
   firstValue = "";
   secondValue = "";
   currentOperator = null;
@@ -34,6 +37,9 @@ equals[0].addEventListener("click", function () {
 
 for (var i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", function () {
+    if (!firstValue && temp){
+      firstValue = temp
+    }
     currentOperator = this.getAttribute("id");
     output.innerHTML = currentOperator;
     console.log(currentOperator);
