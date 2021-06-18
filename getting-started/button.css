@@ -5,10 +5,20 @@ button {
   margin: 10px;
   border: none;
   border-radius: 2px;
+  cursor: pointer;
 }
+button:hover{
+  background-color: black;
+  color: white;
+}
+
 .button {
   background-color: rgb(105, 105, 105);
   color: white;
+}
+
+.button:after{
+  background-color: aquamarine;
 }
 .buttons{
   margin: auto;
